@@ -1,5 +1,6 @@
 <%- include ../partials/header -%>
 <body>
+    <div class="container">
     <% if (!bol){ %> 
     <form action="/lend/new/storage" method="post" class="col-md-7">
         <div class="form-group">
@@ -38,5 +39,6 @@
         <%});%>
     </div>
     <% } %>
+    </div>
 </body>
 <%- include ../partials/footer -%>

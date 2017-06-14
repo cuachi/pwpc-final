@@ -1,5 +1,6 @@
 <%- include ../partials/header -%>
 <body>
+    <div class="container">
     <% if (!bol && !update){ %>
     <form action="/inventory/update/show" method="post" class="col-md-7">
         <div class="form-group">
@@ -92,5 +93,6 @@
         </div>
     </form>
     <%}%>
+    </div>
 </body>
 <%- include ../partials/footer -%>

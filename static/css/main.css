@@ -1,0 +1,26 @@
+.navbar-black {
+    background: #373f46;
+}
+
+.navbar-nav>li>a:hover{
+    background-color: #373f46;
+}
+
+.nav .open>a, .nav .open>a:focus, .nav .open>a:hover {
+    background-color: #373f46;
+}
+.jumbotron.col-md-3{
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-bottom: 10px;
+    background-color: #373f43;
+}
+
+select{
+    color : black;
+}
+
+body{
+    background-color: #1b242c;
+    color: white;
+}
