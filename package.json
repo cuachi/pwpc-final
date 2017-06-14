@@ -4,7 +4,8 @@
   "description": "Servidor express para el control de inventario",
   "main": "server.js",
   "scripts": {
-    "start": "nodemon server.js",
+    "stop" : "taskkill /im node.exe /f",
+    "start": "node server.js ",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

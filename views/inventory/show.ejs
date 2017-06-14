@@ -1,0 +1,35 @@
+<%- include ../partials/header -%>
+<body>
+    <form action="/inventory/show" method="post" class="col-md-7">
+        <div class="form-group">
+            <label for ="almacen">Almacen</label>
+            <select id="almacen" name="almacen">
+                <option value="Eventos">Eventos</option>
+                <option value="Papeleria">Papeleria</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <input type="submit" class="btn btn-primary" value="Consultar">
+        </div>
+    </form>
+
+    <% if (bol) { %>
+    <div class="col-md-10">
+        <% documents.forEach(function(document) { %>
+        <div class="jumbotron col-md-3">
+        <ul>
+        <li>Nombre: <%= document.nombre %></li>
+        <li>Cantidad: <%= document.cantidad %></li>
+        <% if (document.perecedero === 'true') {%>
+            <li>Perecedero: Si</li>
+            <%}else{%>
+            <li>Perecedero: No</li>
+            <%}%>
+        </ul>
+        </div>
+        <%});%>
+    </div>
+    <% } %>
+</body>
+<%- include ../partials/footer -%>

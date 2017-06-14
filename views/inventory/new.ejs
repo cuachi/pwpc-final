@@ -1,0 +1,47 @@
+<%- include ../partials/header -%>
+<body>
+    <form action="/inventory/new" method="POST" class="col-md-7">
+        <div class="form-group">
+        <label>Nombre</label>
+            <div class="input-group">
+                <span class="input-group-addon glyphicon glyphicon-tags" id="addon1"></span>
+                <input type="text" id="nombre" name="nombre" placeholder="Nombre" aria-describedby="addon1" class="form-control" required>
+            </div>
+        </div>
+
+        <div class="form-group">
+        <label>Cantidad</label>
+            <div class="input-group">
+            <span class="input-group-addon glyphicon glyphicon-euro" id="addon2"></span>
+                <input type="number" id="cantidad" name="cantidad" placeholder="Cantidad" aria-describedby="addon2" class="form-control" required>
+            </div>
+        </div>
+
+        <div class="form-group">
+        <label>Almacen</label>
+            <div class="input-group">
+            <span class="input-group-addon glyphicon glyphicon-inbox" id="addon2"></span>
+                <select name="almacen" id="almacen" aria-describedby="addon3" class="form-control">
+                    <option value="Eventos">Eventos</option>
+                    <option value="Papeleria">Papeleria</option>                    
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group">
+        <label>Perecedero</label>
+            <div class="input-group">
+            <span class="input-group-addon glyphicon glyphicon-pencil" id="addon2"></span>
+                <select name="perecedero" id="perecedero" aria-describedby="addon4" class="form-control">
+                    <option value="true">Si</option>
+                    <option value="false">No</option>                    
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <input type="submit" class="btn btn-primary" value="ENVIAR">
+        </div>
+    </form>
+</body>
+<%- include ../partials/footer -%>

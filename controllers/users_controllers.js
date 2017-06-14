@@ -1,5 +1,4 @@
-const url = require('../config/config'),
-    mongo = require('mongodb').MongoClient;
+const db = require('./db');
 
 module.exports = {
     getSignup : (req,res,next)=>{
@@ -10,18 +9,13 @@ module.exports = {
         console.log(`> Sirviendo signup`);
     },
     postSignup : (req,res,next)=>{
-        mongo.connect(url.DB,(err,db)=>{
-            var collection = db.collection('users');
-            collection.insert(req.body,(err,data)=>{
-                if (err) throw err; 
-                console.log(data); 
-            });
-        });
-        res.render("user/signup",{
+        if(db.insert(req,'users')){
+            res.render("user/signup",{
             isAuthenticated : req.isAuthenticated(),
             user : req.user,
-            title: 'Sign up'});
-        return;        
+            title: 'Registro'});
+        return;
+        }        
     },
     getSignin : (req,res,next)=>{
         res.render('user/signin',{

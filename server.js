@@ -33,11 +33,15 @@ app.post('/user/signin',passport.authenticate('local',{
     successRedirect: '/',
     failureRedirect: '/user/signin'
 }));
-app.get('/logout', function(req, res){
-  req.logout();
-  res.redirect('/');
-});
-
+app.get('/logout',controllers.users_controllers.logout);
+app.get('/inventory/new',controllers.inventory_controllers.getNew);
+app.post('/inventory/new',controllers.inventory_controllers.postNew);
+app.get('/inventory/show',controllers.inventory_controllers.getShow);
+app.post('/inventory/show',controllers.inventory_controllers.postShow); 
+app.get('/inventory/update',controllers.inventory_controllers.getUpdate);
+app.post('/inventory/update',controllers.inventory_controllers.postUpdate);
+app.post('/inventory/update/show',controllers.inventory_controllers.postUpdateShow);
+app.post('/inventory/update/item',controllers.inventory_controllers.postUpdateItem);
 
 app.listen(config.PORT,(err)=>{
     if(err) throw err;

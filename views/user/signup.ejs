@@ -6,14 +6,21 @@
             <div class="form-group ">
                 <div class="input-group">
                     <span class="input-group-addon" id="addon1">@</span>
-                    <input type="text" id="nombre" name="nombre" placeholder="Nombre" aria-describedby="addon1" class="form-control">
+                    <input type="text" id="nombre" name="nombre" placeholder="Nombre" aria-describedby="addon1" class="form-control" required>
                 </div>
             </div>
 
             <div class="form-group ">
                 <div class="input-group">
                     <span class="input-group-addon" id="addon2">*</span>
-                    <input type="password" id="password" name="password" placeholder="Contaseña" aria-describedby="addon2" class="form-control">
+                    <input type="password" id="password" name="password" placeholder="Contaseña" aria-describedby="addon2" class="form-control" required>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="input-group">
+                <input type="checkbox" name="admin" id="admin" value="false" onChange="document.getElementById('admin').value = document.getElementById('admin').checked">
+                <label for="admin">¿Es administrador?</label>
                 </div>
             </div>
 
