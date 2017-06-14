@@ -6,6 +6,7 @@
   "scripts": {
     "stop" : "taskkill /im node.exe /f",
     "start": "node server.js ",
+    "postinstall": "bower install",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
