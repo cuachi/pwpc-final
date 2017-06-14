@@ -1,0 +1,42 @@
+<%- include ../partials/header -%>
+<body>
+    <% if (!bol){ %> 
+    <form action="/lend/new/storage" method="post" class="col-md-7">
+        <div class="form-group">
+            <label for ="almacen">Almacen</label>
+            <select id="almacen" name="almacen">
+                <option value="Eventos">Eventos</option>
+                <option value="Papeleria">Papeleria</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <input type="submit" class="btn btn-primary" value="Consultar">
+        </div>
+    </form>
+    <%} else {%>
+    <div class="col-md-10">
+        <% documents.forEach(function(document) { %>
+        <div class="jumbotron col-md-3">
+        <ul>
+        <li>Nombre: <%= document.nombre %></li>
+        <li>Cantidad: <%= document.cantidad %></li>
+        </ul>
+        <form action="/lend/new" method="POST">
+            <input type="hidden" id="_id" name="_id" <%= "value="+documents[0]._id %> aria-describedby="addon1" class="form-control" hide>
+            <div class="form-group">
+            <label>Cantidad</label>
+            <div class="input-group">
+            <span class="input-group-addon glyphicon glyphicon-euro" id="addon2"></span>
+                <input type="number" id="cantidad" name="cantidad" placeholder = "Cantidad a pedir" aria-describedby="addon2" class="form-control" required>
+            </div>
+        </div>
+            <div class="form-group">
+            <input type="submit" class="btn btn-primary" value="Pedir">
+        </div>
+        </form>
+        </div>
+        <%});%>
+    </div>
+    <% } %>
+</body>
+<%- include ../partials/footer -%>

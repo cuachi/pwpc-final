@@ -11,7 +11,7 @@ app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 
 app.use(bodyParser.urlencoded({extended: false}));
-app.use(express.static(__dirname + '/static/vendor'));
+app.use(express.static(__dirname + '/static'));
 app.use(cookieSession({
     keys: ['secret1', 'secret2']
 }));
@@ -42,6 +42,11 @@ app.get('/inventory/update',controllers.inventory_controllers.getUpdate);
 app.post('/inventory/update',controllers.inventory_controllers.postUpdate);
 app.post('/inventory/update/show',controllers.inventory_controllers.postUpdateShow);
 app.post('/inventory/update/item',controllers.inventory_controllers.postUpdateItem);
+app.get('/lend/new',controllers.lend_controllers.getNew);
+app.post('/lend/new',controllers.lend_controllers.postNew);
+app.post('/lend/new/storage',controllers.lend_controllers.postNewStorage);
+app.get('/lend/update',controllers.lend_controllers.getUpdate);
+app.get('/lend/show',controllers.lend_controllers.getShow);
 
 app.listen(config.PORT,(err)=>{
     if(err) throw err;

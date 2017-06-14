@@ -3,10 +3,10 @@ const url = require('../config/config'),
     ObjectId = require('mongodb').ObjectID;
 
 module.exports = {
-    insert: (req, col) => {
+    insert: (ob, col) => {
         mongo.connect(url.DB, (err, db) => {
             var collection = db.collection(col);
-            collection.insert(req.body, (err, data) => {
+            collection.insert(ob, (err, data) => {
                 if (err) throw err;
                 db.close();
             });

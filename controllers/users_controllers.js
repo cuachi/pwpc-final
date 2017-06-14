@@ -9,7 +9,7 @@ module.exports = {
         console.log(`> Sirviendo signup`);
     },
     postSignup : (req,res,next)=>{
-        if(db.insert(req,'users')){
+        if(db.insert(req.body,'users')){
             res.render("user/signup",{
             isAuthenticated : req.isAuthenticated(),
             user : req.user,

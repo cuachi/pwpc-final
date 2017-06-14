@@ -81,7 +81,7 @@ module.exports = {
         console.log(`> Sirviendo new`);
     },
     postNew : (req,res,next)=>{
-        if (db.insert(req,"items"))
+        if (db.insert(req.body,"items"))
         {
             res.render('inventory/new',{
             isAuthenticated : req.isAuthenticated(),
